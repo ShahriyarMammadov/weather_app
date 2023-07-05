@@ -105,7 +105,9 @@ export default function Home() {
 
   // search
   const onSearch = (value) => {
-    fetchCoordinates(value);
+    if (value.trim() != "") {
+      fetchCoordinates(value);
+    }
   };
   // -----------------------------------
 
