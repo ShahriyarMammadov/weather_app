@@ -1,0 +1,208 @@
+.weather {
+    background-color: #0b131e;
+    color: white;
+
+    .weatherDetails {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .left {
+            width: 72%;
+
+            @media only screen and (max-width: 992px) {
+                width: 100%;
+            }
+
+            .iconAndCountryCity {
+                padding: 30px;
+                display: flex;
+                align-items: center;
+                flex-wrap: wrap;
+                justify-content: space-between;
+
+                @media only screen and (max-width: 430px) {
+                    text-align: center;
+                    justify-content: center;
+                }
+
+                .cityName {
+                    h2 {
+                        font-size: 40px;
+                    }
+                }
+
+                .description {
+                    p {
+                        font-size: 25px;
+                        padding: 15px 0;
+                        font-weight: 600;
+                    }
+                }
+
+                .cityPopulation {
+                    h4 {
+                        color: #838b95;
+                    }
+                }
+
+                .temperature {
+                    h1 {
+                        font-size: 60px;
+                        padding: 15px 0;
+                        font-weight: 700;
+                    }
+                }
+            }
+        }
+    }
+
+    .weatherContainer {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 10px;
+    }
+
+    .inputDiv {
+        width: 75%;
+
+        @media only screen and (max-width: 992px) {
+            width: 100%;
+        }
+
+        input {
+            // color: white;
+
+            &::placeholder {
+                // color: white;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .hourlyWeatherDetails {
+        background-color: #202b3b;
+        border-radius: 20px;
+        padding: 20px;
+
+        h3 {
+            font-weight: 900;
+        }
+
+        .hourlyData {
+            text-align: center;
+            display: flex;
+            gap: 10px;
+            padding: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        @media only screen and (max-width: 430px) {
+            .hourlyData {
+                display: block;
+                padding: 15px 0;
+
+                div {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 15px 0;
+                    font-size: 20px;
+                    font-weight: 600;
+                }
+            }
+        }
+    }
+
+    .airConditions {
+        width: 100%;
+        background-color: #202b3b;
+        border-radius: 20px;
+        padding: 20px;
+        margin-top: 20px;
+
+        h3 {
+            font-weight: 900;
+        }
+
+        .airConditionsData {
+            display: flex;
+            gap: 150px;
+            padding: 20px;
+
+            p {
+                font-size: 20px;
+                margin-top: 10px;
+                font-weight: 600;
+                color: #838b95;
+
+                span {
+                    color: aliceblue;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 430px) {
+            .airConditionsData {
+                gap: 15px;
+                // align-items: center;
+                padding: 0;
+
+                p {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 5px;
+                }
+            }
+        }
+
+        @media only screen and (max-width: 800px) {
+            .airConditionsData {
+                gap: 15px;
+            }
+        }
+    }
+
+    .dailyWeatherDetails {
+        background-color: #202b3b;
+        padding: 20px;
+        border-radius: 20px;
+
+        .forecastData {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            padding: 15px 0;
+
+            // @media only screen and (max-width: 425px) {
+            //     display: inline-block;
+            // }
+        }
+
+        @media only screen and (max-width: 430px) {
+            .forecastData {
+                justify-content: center;
+            }
+
+            .forecastDetail {
+                display: block !important;
+                font-size: 20px;
+                font-weight: 600;
+            }
+        }
+
+        @media only screen and (max-width: 992px) {
+            width: 100%;
+            margin-top: 20px;
+
+            .forecastDetail {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+        }
+
+    }
+}
