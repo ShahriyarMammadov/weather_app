@@ -111,6 +111,12 @@ export default function Home() {
   };
   // -----------------------------------
 
+  let sunriseTimestamp = weatherData?.city?.sunrise;
+  let sunsetTimestamp = weatherData?.city?.sunset;
+
+  const sunrise = new Date(sunriseTimestamp * 1000);
+  const sunset = new Date(sunsetTimestamp * 1000);
+
   // Saatliq Data +
   const hourlyData = weatherData?.list?.slice(0, 6);
 
@@ -288,6 +294,13 @@ export default function Home() {
                         <div className={styles.airConditionsData}>
                           <div>
                             <p>
+                              Sunset:{" "}
+                              <span>
+                                {" "}
+                                {sunrise.toLocaleTimeString()}
+                              </span>
+                            </p>
+                            <p>
                               Feels Like:{" "}
                               <span>
                                 {" "}
@@ -298,6 +311,7 @@ export default function Home() {
                                 <sup>°C</sup>
                               </span>
                             </p>
+
                             <p>
                               Humidity:{" "}
                               <span>
@@ -324,6 +338,13 @@ export default function Home() {
                             </p>
                           </div>
                           <div>
+                            <p>
+                              Sunset:{" "}
+                              <span>
+                                {" "}
+                                {sunset.toLocaleTimeString()}
+                              </span>
+                            </p>
                             <p>
                               Max Temp.:{" "}
                               <span>
