@@ -297,7 +297,7 @@ export default function Home() {
                         <div className={styles.airConditionsData}>
                           <div>
                             <p>
-                              Sunset:{" "}
+                              Sunrise:{" "}
                               <span> {sunrise.toLocaleTimeString()}</span>
                             </p>
                             <p>
