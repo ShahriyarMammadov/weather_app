@@ -19,6 +19,11 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap"
           rel="stylesheet"
         />
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2651137106510803"
+          crossorigin="anonymous"
+        ></script>
       </Head>
       <body className={inter.className}>{children}</body>
     </html>
