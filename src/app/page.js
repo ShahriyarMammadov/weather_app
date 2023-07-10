@@ -44,6 +44,26 @@ export default function Home() {
   };
 
   useEffect(() => {
+    const setThemeColor = (color) => {
+      const metaThemeColor = document.querySelector('meta[name="theme-color"]');
+      if (metaThemeColor) {
+        metaThemeColor.setAttribute("content", color);
+      } else {
+        const newMeta = document.createElement("meta");
+        newMeta.setAttribute("name", "theme-color");
+        newMeta.setAttribute("content", color);
+        document.head.appendChild(newMeta);
+      }
+    };
+
+    const prefersDarkMode = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    const color = prefersDarkMode ? "red" : "cyan";
+    setThemeColor(color);
+  }, []);
+
+  useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
