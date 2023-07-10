@@ -4,6 +4,10 @@
   margin: 0;
 }
 
+:root {
+  --status-bar-color: #9ca811;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --status-bar-color: #319197;
