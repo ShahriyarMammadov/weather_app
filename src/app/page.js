@@ -51,7 +51,10 @@ export default function Home() {
           setLocation({ latitude, longitude });
         },
         (error) => {
-          alert("Please allow access to your location data.");
+          setLocation({
+            latitude: 40.4143569,
+            longitude: 50.1176359,
+          });
           console.log(error);
         }
       );
@@ -295,10 +298,7 @@ export default function Home() {
                           <div>
                             <p>
                               Sunset:{" "}
-                              <span>
-                                {" "}
-                                {sunrise.toLocaleTimeString()}
-                              </span>
+                              <span> {sunrise.toLocaleTimeString()}</span>
                             </p>
                             <p>
                               Feels Like:{" "}
@@ -340,10 +340,7 @@ export default function Home() {
                           <div>
                             <p>
                               Sunset:{" "}
-                              <span>
-                                {" "}
-                                {sunset.toLocaleTimeString()}
-                              </span>
+                              <span> {sunset.toLocaleTimeString()}</span>
                             </p>
                             <p>
                               Max Temp.:{" "}
