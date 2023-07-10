@@ -128,6 +128,7 @@ export default function Home() {
       <Head>
         <title>Weather App</title>
         <meta name="description" content="weather application" />
+        <meta name="theme-color" content="#32a852" />
       </Head>
       <main>
         <section>

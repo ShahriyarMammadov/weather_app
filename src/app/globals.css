@@ -3,19 +3,3 @@
   padding: 0;
   margin: 0;
 }
-
-:root {
-  --status-bar-color: #9ca811;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --status-bar-color: #319197;
-  }
-}
-
-body {
-  margin-top: env(safe-area-inset-top);
-  padding-top: calc(1em + env(safe-area-inset-top));
-  background-color: var(--status-bar-color);
-}
