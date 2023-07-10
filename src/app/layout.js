@@ -13,21 +13,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <meta
-          name="theme-color"
-          media="(prefers-color-scheme: light)"
-          content="cyan"
-        />
-        <meta
-          name="theme-color"
-          media="(prefers-color-scheme: dark)"
-          content="red"
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
           href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap"
           rel="stylesheet"
+        />
+        <meta
+          key="theme-color-light"
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#32a852"
+        />
+        <meta
+          key="theme-color-light"
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#dfe8eb"
         />
         <script
           async
