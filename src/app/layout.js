@@ -13,7 +13,16 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <Head>
-        <meta name="theme-color" content="#80231c" />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="cyan"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="red"
+        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link
