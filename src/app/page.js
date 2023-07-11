@@ -15,6 +15,9 @@ import drizzle from "./assets/images/drizzle.png";
 import mist from "./assets/images/mist.png";
 import tornado from "./assets/images/tornado.svg";
 import LoadingComponent from "./components/loading";
+import { useTranslation } from "react-i18next";
+// import i18n from "i18next";
+import i18n from "./locales/i18n";
 
 export default function Home() {
   // {
@@ -143,23 +146,18 @@ export default function Home() {
   // Saatliq Data +
   const hourlyData = weatherData?.list?.slice(0, 6);
 
+  // Language
+  const { t } = useTranslation();
+
+  const changeLanguage = (lng) => {
+    i18n.changeLanguage(lng);
+  };
+
   return (
     <>
       <Head>
         <title>Weather App</title>
         <meta name="description" content="weather application" />
-        <meta
-          key="theme-color-light"
-          name="theme-color"
-          media="(prefers-color-scheme: dark)"
-          content="#32a852"
-        />
-        <meta
-          key="theme-color-light"
-          name="theme-color"
-          media="(prefers-color-scheme: light)"
-          content="#dfe8eb"
-        />
       </Head>
       <main>
         <section>
@@ -172,9 +170,9 @@ export default function Home() {
                   <div className={styles.inputDiv}>
                     <Search
                       className={styles.input}
-                      placeholder="Search for cities"
+                      placeholder={t("search for cities")}
                       allowClear
-                      enterButton="Search"
+                      enterButton={t("search")}
                       size="large"
                       onSearch={onSearch}
                     />
@@ -195,7 +193,9 @@ export default function Home() {
                             </p>
                           </div>
                           <div className={styles.cityPopulation}>
-                            <h4>Population: {weatherData?.city?.population}</h4>
+                            <h4>
+                              {t("population")}: {weatherData?.city?.population}
+                            </h4>
                           </div>
                           <div className={styles.temperature}>
                             <h1>
@@ -299,7 +299,7 @@ export default function Home() {
                         </div>
                       </div>
                       <div className={styles.hourlyWeatherDetails}>
-                        <h3>TODAY'S FORECAST</h3>
+                        <h3>{t("to day's forecast")}</h3>
                         <div className={styles.hourlyData}>
                           <hr />
                           {hourlyData?.map((e, i) => {
@@ -325,15 +325,15 @@ export default function Home() {
                         </div>
                       </div>
                       <div className={styles.airConditions}>
-                        <h3>AIR CONDITIONS</h3>
+                        <h3>{t("air conditions")}</h3>
                         <div className={styles.airConditionsData}>
                           <div>
                             <p>
-                              Sunrise:{" "}
+                              {t("sunrise")}:{" "}
                               <span> {sunrise.toLocaleTimeString()}</span>
                             </p>
                             <p>
-                              Feels Like:{" "}
+                              {t("feels like")}:{" "}
                               <span>
                                 {" "}
                                 {(
@@ -345,25 +345,25 @@ export default function Home() {
                             </p>
 
                             <p>
-                              Humidity:{" "}
+                              {t("humidity")}:{" "}
                               <span>
                                 {weatherData?.list[0]?.main?.humidity} %
                               </span>
                             </p>
                             <p>
-                              Pressure:{" "}
+                              {t("pressure")}:{" "}
                               <span>
                                 {weatherData?.list[0]?.main?.pressure} mbar
                               </span>
                             </p>
                             <p>
-                              Sea Level:{" "}
+                              {t("sea level")}:{" "}
                               <span>
                                 {weatherData?.list[0]?.main?.sea_level} mbar
                               </span>
                             </p>
                             <p>
-                              Ground Level:{" "}
+                              {t("ground level")}:{" "}
                               <span>
                                 {weatherData?.list[0]?.main?.grnd_level} mbar
                               </span>
@@ -371,11 +371,11 @@ export default function Home() {
                           </div>
                           <div>
                             <p>
-                              Sunset:{" "}
+                              {t("sunset")}:{" "}
                               <span> {sunset.toLocaleTimeString()}</span>
                             </p>
                             <p>
-                              Max Temp.:{" "}
+                              {t("max temp")}.:{" "}
                               <span>
                                 {" "}
                                 {(
@@ -385,7 +385,7 @@ export default function Home() {
                               </span>
                             </p>
                             <p>
-                              Min Temp.:{" "}
+                              {t("min temp")}.:{" "}
                               <span>
                                 {(
                                   weatherData?.list[0]?.main?.temp_min - 273.15
@@ -394,20 +394,20 @@ export default function Home() {
                               </span>
                             </p>
                             <p>
-                              Temp. Change:{" "}
+                              {t("temp. change")}:{" "}
                               <span>
                                 {weatherData?.list[0]?.main?.temp_kf}
                                 <sup>°K</sup>
                               </span>
                             </p>
                             <p>
-                              Wind Speed:{" "}
+                              {t("wind speed")}:{" "}
                               <span>
                                 {weatherData?.list[0]?.wind?.speed} m/s
                               </span>
                             </p>
                             <p>
-                              Wind Direction:{" "}
+                              {t("wind direction")}:{" "}
                               <span>
                                 {weatherData?.list[0]?.wind?.deg} degrees
                               </span>
