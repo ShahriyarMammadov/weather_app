@@ -59,7 +59,7 @@ export default function Home() {
     const prefersDarkMode = window.matchMedia(
       "(prefers-color-scheme: dark)"
     ).matches;
-    const color = prefersDarkMode ? "red" : "cyan";
+    const color = prefersDarkMode ? "#0E2954" : "#AAC8A7";
     setThemeColor(color);
   }, []);
 

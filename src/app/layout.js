@@ -19,18 +19,6 @@ export default function RootLayout({ children }) {
           href="https://fonts.googleapis.com/css2?family=Kanit:wght@700&display=swap"
           rel="stylesheet"
         />
-        <meta
-          key="theme-color-light"
-          name="theme-color"
-          media="(prefers-color-scheme: dark)"
-          content="#32a852"
-        />
-        <meta
-          key="theme-color-light"
-          name="theme-color"
-          media="(prefers-color-scheme: light)"
-          content="#dfe8eb"
-        />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2651137106510803"
