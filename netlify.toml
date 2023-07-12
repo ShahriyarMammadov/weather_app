@@ -1,0 +1,9 @@
+[[redirects]]
+from = "/locales/*"
+to = "/locales/:splat"
+status = 200
+
+[[headers]]
+for = "/locales/*"
+[headers.values]
+Content-Type = "application/json"
