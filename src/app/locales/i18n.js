@@ -1,6 +1,5 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-
 import translationEN from "../locales/en.json";
 import translationTR from "../locales/tr.json";
 import translationAZ from "../locales/az.json";
@@ -20,13 +19,16 @@ const resources = {
     translation: translationRU,
   },
 };
+let userLang;
+let userLanguage = window?.navigator.userLanguage || window?.navigator.language;
 
-const userLanguages =
-  window?.navigator.userLanguage || window?.navigator.language;
+userLanguage ? (userLang = userLanguage?.slice(0, 2)) : null;
+
+console.log(userLang);
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: `${userLanguages.slice(0, 2)}`,
+  lng: `${userLang}`,
   fallbackLng: "en",
   interpolation: {
     escapeValue: false,
