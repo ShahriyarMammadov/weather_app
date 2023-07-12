@@ -22,7 +22,7 @@ const resources = {
 };
 
 const userLanguages =
-  window.navigator.userLanguage || window.navigator.language;
+  window?.navigator.userLanguage || window?.navigator.language;
 
 i18n.use(initReactI18next).init({
   resources,
