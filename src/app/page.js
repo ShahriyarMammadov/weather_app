@@ -10,7 +10,7 @@ import snow from "./assets/images/snow.gif";
 import cloudy from "./assets/images/cloud.gif";
 import rainy from "./assets/images/rainy.gif";
 import sunny from "./assets/images/sunny1.gif";
-import thunderstorm from "./assets/images/Thunderstorm.gif";
+import thunderstorm from "./assets/images/thunderstorm.gif";
 import drizzle from "./assets/images/drizzle.gif";
 import mist from "./assets/images/mist.gif";
 import tornado from "./assets/images/tornado.gif";
