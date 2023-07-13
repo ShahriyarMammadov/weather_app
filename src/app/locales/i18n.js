@@ -19,8 +19,12 @@ const resources = {
     translation: translationRU,
   },
 };
+
 let userLang;
-let userLanguage = window?.navigator.userLanguage || window?.navigator.language;
+let userLanguage =
+  typeof window !== "undefined"
+    ? window.navigator.userLanguage || window.navigator.language
+    : null;
 
 userLanguage ? (userLang = userLanguage?.slice(0, 2)) : null;
 
