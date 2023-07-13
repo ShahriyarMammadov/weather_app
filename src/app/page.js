@@ -191,7 +191,9 @@ export default function Home() {
                           </div>
                           <div className={styles.description}>
                             <p>
-                              {weatherData?.list[0]?.weather[0]?.description}
+                              {t(
+                                `${weatherData?.list[0]?.weather[0]?.description}`
+                              )}
                             </p>
                           </div>
                           <div className={styles.cityPopulation}>
@@ -411,7 +413,7 @@ export default function Home() {
                             <p>
                               {t("wind direction")}:{" "}
                               <span>
-                                {weatherData?.list[0]?.wind?.deg} degrees
+                                {weatherData?.list[0]?.wind?.deg} {t("degrees")}
                               </span>
                             </p>
                           </div>
@@ -420,6 +422,7 @@ export default function Home() {
                     </div>
                     <div className={styles.dailyWeatherDetails}>
                       <div className={styles.forecastDetail}>
+                        <h3>{t("5 day weather forecast")}</h3>
                         {dailyDataArray?.map((data, index) => {
                           return (
                             <>

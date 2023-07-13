@@ -1,6 +1,20 @@
 {
   "search for cities": "Поиск городов",
   "search": "Поиск",
+
+  "light rain": "Легкий дождь",
+  "clear sky": "чистое небо",
+  "few clouds": "Несколько облаков",
+  "scattered clouds": "Рассеянные облака",
+  "shower rain": "дождь в душе",
+  "rain": "Дождь",
+  "thunderstorm": "Гроза",
+  "mist": "туман",
+  "snow": "Снег",
+  "thunderstorm with light rain": "Гроза с небольшим дождем",
+  "thunderstorm with rain": "Гроза с дождем",
+  "broken clouds": "Разорванные облака",
+
   "population": "Население",
   "to day's forecast": "ПРОГНОЗ НА СЕГОДНЯ",
   "air conditions": "УСЛОВИЯ ВОЗДУХА",
@@ -15,5 +29,7 @@
   "min temp": "Мин. Tемп",
   "temp. change": "Изменение темп.",
   "wind speed": "Скорость ветра",
-  "wind direction": "Направление ветра"
+  "wind direction": "Направление ветра",
+  "5 day weather forecast": "5-дневный прогноз погоды",
+  "degrees": "cтепени"
 }

@@ -1,6 +1,20 @@
 {
   "search for cities": "Şehir ara",
   "search": "Ara",
+
+  "light rain": "Az yağmurlu",
+  "clear sky": "Temiz gökyüzü",
+  "few clouds": "Az buludlu",
+  "scattered clouds": "Dağınık buludlu",
+  "shower rain": "Çok yağmurlu",
+  "rain": "Yağmurlu",
+  "thunderstorm": "Fırtına",
+  "mist": "Sisli",
+  "snow": "Kar Yağışı",
+  "thunderstorm with light rain": "Hafif yağmurlu fırtına",
+  "thunderstorm with rain": "Yağmurlu fırtına",
+  "broken clouds": "Kırık bulutlar",
+
   "population": "Nüfus",
   "to day's forecast": "Bu günün tahmini",
   "air conditions": "Hava şartları",
@@ -15,5 +29,7 @@
   "min temp": "Min. Sıcaklık",
   "temp. change": "Temp. Değişimi",
   "wind speed": "Rüzgar hızı",
-  "wind direction": "Rüzgar yönü"
+  "wind direction": "Rüzgar yönü",
+  "5 day weather forecast": "5 Günlük hava durumu",
+  "degrees": "derece"
 }

@@ -1,6 +1,20 @@
 {
   "search for cities": "Search for cities",
   "search": "Search",
+
+  "light rain": "Light rain",
+  "clear sky": "clear sky",
+  "few clouds": "Few clouds",
+  "scattered clouds": "Scattered clouds",
+  "shower rain": "Shower rain",
+  "rain": "Rain",
+  "thunderstorm": "Thunderstorm",
+  "mist": "Mist",
+  "snow": "Snow",
+  "thunderstorm with light rain": "Thunderstorm with light rain",
+  "thunderstorm with rain": "Thunderstorm with rain",
+  "broken clouds": "Broken clouds",
+
   "population": "Population",
   "to day's forecast": "TODAY'S FORECAST",
   "air conditions": "AIR CONDITIONS",
@@ -15,5 +29,7 @@
   "min temp": "Min Temp",
   "temp. change": "Temp. Change",
   "wind speed": "Wind Speed",
-  "wind direction": "Wind Direction"
+  "wind direction": "Wind Direction",
+  "5 day weather forecast": "5 Day weather forecast",
+  "degrees": "degrees"
 }
