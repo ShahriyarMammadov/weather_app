@@ -18,6 +18,7 @@ import LoadingComponent from "./components/loading";
 import { useTranslation } from "react-i18next";
 // import i18n from "i18next";
 import i18n from "./locales/i18n";
+import Bar from "./components/bar";
 
 export default function Home() {
   // {
@@ -165,6 +166,7 @@ export default function Home() {
             <LoadingComponent />
           ) : (
             <React.Fragment>
+              <Bar />
               <div className={styles.weather}>
                 <div className={styles.weatherContainer}>
                   <div className={styles.inputDiv}>
