@@ -28,8 +28,6 @@ let userLanguage =
 
 userLanguage ? (userLang = userLanguage?.slice(0, 2)) : null;
 
-console.log(userLang);
-
 i18n.use(initReactI18next).init({
   resources,
   lng: `${userLang}`,

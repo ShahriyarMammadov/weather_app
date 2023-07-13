@@ -213,87 +213,88 @@ export default function Home() {
                         <div className={styles.icon}>
                           {weatherData.list[0].weather[0].main === "Clear" ? (
                             <Image
+                              // quality={1}
+                              loading="lazy"
                               src={sunny}
                               width={260}
                               height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
-                              priority
                             />
                           ) : weatherData.list[0].weather[0].main === "Rain" ? (
                             <Image
+                              loading="lazy"
                               src={rainy}
                               width={260}
                               height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
-                              priority
                             />
                           ) : weatherData.list[0].weather[0].main === "Snow" ? (
                             <Image
+                              loading="lazy"
                               src={snow}
                               width={260}
                               height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
-                              priority
                             />
                           ) : weatherData.list[0].weather[0].main ===
                             "Clouds" ? (
                             <Image
+                              loading="lazy"
                               src={cloudy}
                               width={320}
                               height={240}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
-                              priority
                             />
                           ) : weatherData.list[0].weather[0].main ===
                             "Thunderstorm" ? (
                             <Image
+                              loading="lazy"
                               src={thunderstorm}
                               width={260}
                               height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
-                              priority
                             />
                           ) : weatherData.list[0].weather[0].main ===
                             "Drizzle" ? (
                             <Image
+                              loading="lazy"
                               src={drizzle}
                               width={200}
                               height={200}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
-                              priority
                             />
                           ) : weatherData.list[0].weather[0].main === "Mist" ? (
                             <Image
+                              loading="lazy"
                               src={mist}
                               width={260}
                               height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
-                              priority
                             />
                           ) : weatherData.list[0].weather[0].main ===
                             "Tornado" ? (
                             <Image
+                              loading="lazy"
                               src={tornado}
                               width={260}
                               height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
-                              priority
                             />
                           ) : (
                             <p>
