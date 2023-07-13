@@ -6,14 +6,14 @@ import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import { Input } from "antd";
-import snow from "./assets/images/snow.png";
-import cloudy from "./assets/images/cloudy.png";
-import rainy from "./assets/images/rainy.png";
-import sunny from "./assets/images/sunny.png";
-import thunderstorm from "./assets/images/Thunderstorm.png";
-import drizzle from "./assets/images/drizzle.png";
-import mist from "./assets/images/mist.png";
-import tornado from "./assets/images/tornado.svg";
+import snow from "./assets/images/snow.gif";
+import cloudy from "./assets/images/cloud.gif";
+import rainy from "./assets/images/rainy.gif";
+import sunny from "./assets/images/sunny1.gif";
+import thunderstorm from "./assets/images/Thunderstorm.gif";
+import drizzle from "./assets/images/drizzle.gif";
+import mist from "./assets/images/mist.gif";
+import tornado from "./assets/images/tornado.gif";
 import LoadingComponent from "./components/loading";
 import { useTranslation } from "react-i18next";
 // import i18n from "i18next";
@@ -214,8 +214,8 @@ export default function Home() {
                           {weatherData.list[0].weather[0].main === "Clear" ? (
                             <Image
                               src={sunny}
-                              width={200}
-                              height={200}
+                              width={260}
+                              height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
@@ -224,8 +224,8 @@ export default function Home() {
                           ) : weatherData.list[0].weather[0].main === "Rain" ? (
                             <Image
                               src={rainy}
-                              width={200}
-                              height={200}
+                              width={260}
+                              height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
@@ -234,8 +234,8 @@ export default function Home() {
                           ) : weatherData.list[0].weather[0].main === "Snow" ? (
                             <Image
                               src={snow}
-                              width={200}
-                              height={200}
+                              width={260}
+                              height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
@@ -246,7 +246,7 @@ export default function Home() {
                             <Image
                               src={cloudy}
                               width={320}
-                              height={200}
+                              height={240}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
@@ -256,8 +256,8 @@ export default function Home() {
                             "Thunderstorm" ? (
                             <Image
                               src={thunderstorm}
-                              width={200}
-                              height={200}
+                              width={260}
+                              height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
@@ -277,8 +277,8 @@ export default function Home() {
                           ) : weatherData.list[0].weather[0].main === "Mist" ? (
                             <Image
                               src={mist}
-                              width={200}
-                              height={200}
+                              width={260}
+                              height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
@@ -288,8 +288,8 @@ export default function Home() {
                             "Tornado" ? (
                             <Image
                               src={tornado}
-                              width={200}
-                              height={200}
+                              width={260}
+                              height={260}
                               alt={
                                 weatherData?.list[0]?.weather[0]?.description
                               }
