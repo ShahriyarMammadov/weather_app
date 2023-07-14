@@ -19,6 +19,7 @@ import { useTranslation } from "react-i18next";
 // import i18n from "i18next";
 import i18n from "./locales/i18n";
 import Bar from "./components/bar";
+import { Modal } from "antd";
 
 export default function Home() {
   // {
@@ -28,6 +29,8 @@ export default function Home() {
   const [location, setLocation] = useState();
   const [weatherData, setWeatherData] = useState({});
   const [loading, setLoading] = useState(true);
+  const [open, setOpen] = useState(false);
+  const [modalData, setModalData] = useState({});
   const { Search } = Input;
 
   const fetchCoordinates = async (value) => {
@@ -153,6 +156,9 @@ export default function Home() {
   // const changeLanguage = (lng) => {
   //   i18n.changeLanguage(lng);
   // };
+
+  console.log(dailyDataArray);
+  console.log(modalData);
 
   return (
     <>
@@ -355,13 +361,13 @@ export default function Home() {
                             <p>
                               {t("sea level")}:{" "}
                               <span>
-                                {weatherData?.list[0]?.main?.sea_level} mbar
+                                {weatherData?.list[0]?.main?.sea_level} m
                               </span>
                             </p>
                             <p>
                               {t("ground level")}:{" "}
                               <span>
-                                {weatherData?.list[0]?.main?.grnd_level} mbar
+                                {weatherData?.list[0]?.main?.grnd_level} m
                               </span>
                             </p>
                           </div>
@@ -418,7 +424,14 @@ export default function Home() {
                         {dailyDataArray?.map((data, index) => {
                           return (
                             <>
-                              <div key={index} className={styles.forecastData}>
+                              <div
+                                key={index}
+                                className={styles.forecastData}
+                                onClick={() => {
+                                  setModalData(data);
+                                  setOpen(true);
+                                }}
+                              >
                                 <div>{data?.date?.slice(5, 11)}</div>
                                 <div>
                                   {dailyDataArray != [] && (
@@ -446,6 +459,107 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
+
+                {/* Modal Component */}
+                <Modal
+                  title={modalData?.date}
+                  centered
+                  open={open}
+                  onOk={() => setOpen(false)}
+                  onCancel={() => setOpen(false)}
+                  width={1000}
+                >
+                  {open ? (
+                    <div className={styles.airConditions}>
+                      <div
+                        className={styles.airConditionsData}
+                        style={{
+                          display: "flex",
+                          gap: "40px",
+                          fontSize: "20px",
+                          fontWeight: "700",
+                          flexWrap: "wrap",
+                        }}
+                      >
+                        <div>
+                          <p>
+                            {t("feels like")}:{" "}
+                            <span>
+                              {" "}
+                              {(
+                                modalData.data[0]?.main?.feels_like - 273.15
+                              ).toFixed()}
+                              <sup>°C</sup>
+                            </span>
+                          </p>
+
+                          <p>
+                            {t("humidity")}:{" "}
+                            <span>{modalData.data[0]?.main?.humidity} %</span>
+                          </p>
+                          <p>
+                            {t("pressure")}:{" "}
+                            <span>
+                              {modalData.data[0]?.main?.pressure} mbar
+                            </span>
+                          </p>
+                          <p>
+                            {t("sea level")}:{" "}
+                            <span>{modalData.data[0]?.main?.sea_level} m</span>
+                          </p>
+                          <p>
+                            {t("ground level")}:{" "}
+                            <span>{modalData.data[0]?.main?.grnd_level} m</span>
+                          </p>
+                        </div>
+                        <div>
+                          <p>
+                            {t("max temp")}.:{" "}
+                            <span>
+                              {" "}
+                              {(
+                                modalData.data[0]?.main?.temp_max - 273.15
+                              ).toFixed()}
+                              <sup>°C</sup>
+                            </span>
+                          </p>
+                          <p>
+                            {t("min temp")}.:{" "}
+                            <span>
+                              {(
+                                modalData.data[0]?.main?.temp_min - 273.15
+                              ).toFixed()}
+                              <sup>°C</sup>
+                            </span>
+                          </p>
+                          <p>
+                            {t("temp. change")}:{" "}
+                            <span>
+                              {modalData.data[0]?.main?.temp_kf}
+                              <sup>°K</sup>
+                            </span>
+                          </p>
+                          <p>
+                            {t("wind speed")}:{" "}
+                            <span>{modalData.data[0]?.wind?.speed} m/s</span>
+                          </p>
+                          <p>
+                            {t("wind direction")}:{" "}
+                            <span>
+                              {modalData.data[0]?.wind?.deg} {t("degrees")}
+                            </span>
+                          </p>
+                          {modalData?.data[0]?.rain ? (
+                            <p>
+                              {t("Amount of rain during the last 3 hours")}:{" "}
+                              <span>{modalData?.data[0].rain["3h"]} mm</span>
+                            </p>
+                          ) : null}
+                        </div>
+                      </div>
+                    </div>
+                  ) : null}
+                </Modal>
               </div>
             </React.Fragment>
           )}
