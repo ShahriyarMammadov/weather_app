@@ -30,11 +30,9 @@ typeof window !== "undefined"
   ? localStorage.setItem("defaultLang", userLanguage.slice(0, 2))
   : null;
 
-localStorage.getItem("lang")
+localStorage.getItem("lang") !== "null"
   ? (userLang = localStorage.getItem("lang"))
   : (userLang = userLanguage?.slice(0, 2));
-
-// userLanguage ? (userLang = userLanguage?.slice(0, 2)) : null;
 
 i18n.use(initReactI18next).init({
   resources,
