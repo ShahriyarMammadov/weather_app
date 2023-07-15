@@ -64,19 +64,28 @@
     }
 
     .inputDiv {
-        width: 75%;
+        width: 72%;
+        display: flex;
+        gap: 40px;
+        align-items: center;
 
         @media only screen and (max-width: 992px) {
             width: 100%;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         input {
-            // color: white;
+            font-weight: 700;
 
             &::placeholder {
-                // color: white;
                 font-weight: 600;
             }
+        }
+
+        button {
+            background-color: #202b3b;
+            font-weight: 600;
         }
     }
 

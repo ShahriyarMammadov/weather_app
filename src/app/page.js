@@ -5,7 +5,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Input } from "antd";
+import { Input, Space } from "antd";
 import snow from "./assets/images/snow.png";
 import cloudy from "./assets/images/cloudy.png";
 import rainy from "./assets/images/rainy.png";
@@ -19,7 +19,8 @@ import { useTranslation } from "react-i18next";
 // import i18n from "i18next";
 import i18n from "./locales/i18n";
 import Bar from "./components/bar";
-import { Modal } from "antd";
+import { Modal, Select } from "antd";
+import locale from "antd/es/date-picker/locale/en_US";
 
 export default function Home() {
   // {
@@ -153,9 +154,15 @@ export default function Home() {
   // Language
   const { t } = useTranslation();
 
-  // const changeLanguage = (lng) => {
-  //   i18n.changeLanguage(lng);
-  // };
+  const handleChange = (value) => {
+    if (value === "default" && localStorage.getItem("defaultLang")) {
+      i18n.changeLanguage(localStorage.getItem("defaultLang"));
+      localStorage.setItem("lang", i18n.language);
+    } else {
+      i18n.changeLanguage(value);
+      localStorage.setItem("lang", value);
+    }
+  };
 
   return (
     <>
@@ -180,6 +187,35 @@ export default function Home() {
                       enterButton={t("search")}
                       size="large"
                       onSearch={onSearch}
+                    />
+                    <Select
+                      defaultValue={i18n.language}
+                      style={{
+                        width: 80,
+                      }}
+                      onChange={handleChange}
+                      options={[
+                        {
+                          value: "az",
+                          label: "AZ",
+                        },
+                        {
+                          value: "ru",
+                          label: "RU",
+                        },
+                        {
+                          value: "tr",
+                          label: "TR",
+                        },
+                        {
+                          value: "en",
+                          label: "EN",
+                        },
+                        {
+                          value: "default",
+                          label: "Default",
+                        },
+                      ]}
                     />
                   </div>
                   <div className={styles.weatherDetails}>

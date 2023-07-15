@@ -26,6 +26,10 @@ let userLanguage =
     ? window.navigator.userLanguage || window.navigator.language
     : null;
 
+typeof window !== "undefined"
+  ? localStorage.setItem("defaultLang", userLanguage.slice(0, 2))
+  : null;
+
 userLanguage ? (userLang = userLanguage?.slice(0, 2)) : null;
 
 i18n.use(initReactI18next).init({
