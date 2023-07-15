@@ -82,7 +82,7 @@ export default function Home() {
             latitude: 40.4143569,
             longitude: 50.1176359,
           });
-          console.log(error);
+          alert(error);
         }
       );
     } else {
@@ -156,9 +156,6 @@ export default function Home() {
   // const changeLanguage = (lng) => {
   //   i18n.changeLanguage(lng);
   // };
-
-  console.log(dailyDataArray);
-  console.log(modalData);
 
   return (
     <>
@@ -482,6 +479,10 @@ export default function Home() {
                         }}
                       >
                         <div>
+                          <p style={{ fontWeight: "900" }}>
+                            {t(`${modalData.data[0]?.weather[0]?.description}`)}
+                          </p>
+                          <hr />
                           <p>
                             {t("feels like")}:{" "}
                             <span>
@@ -492,25 +493,33 @@ export default function Home() {
                               <sup>°C</sup>
                             </span>
                           </p>
+                          <hr />
 
                           <p>
                             {t("humidity")}:{" "}
                             <span>{modalData.data[0]?.main?.humidity} %</span>
                           </p>
+                          <hr />
+
                           <p>
                             {t("pressure")}:{" "}
                             <span>
                               {modalData.data[0]?.main?.pressure} mbar
                             </span>
                           </p>
+                          <hr />
+
                           <p>
                             {t("sea level")}:{" "}
                             <span>{modalData.data[0]?.main?.sea_level} m</span>
                           </p>
+                          <hr />
+
                           <p>
                             {t("ground level")}:{" "}
                             <span>{modalData.data[0]?.main?.grnd_level} m</span>
                           </p>
+                          <hr />
                         </div>
                         <div>
                           <p>
@@ -523,6 +532,8 @@ export default function Home() {
                               <sup>°C</sup>
                             </span>
                           </p>
+                          <hr />
+
                           <p>
                             {t("min temp")}.:{" "}
                             <span>
@@ -532,6 +543,8 @@ export default function Home() {
                               <sup>°C</sup>
                             </span>
                           </p>
+                          <hr />
+
                           <p>
                             {t("temp. change")}:{" "}
                             <span>
@@ -539,21 +552,30 @@ export default function Home() {
                               <sup>°K</sup>
                             </span>
                           </p>
+                          <hr />
+
                           <p>
                             {t("wind speed")}:{" "}
                             <span>{modalData.data[0]?.wind?.speed} m/s</span>
                           </p>
+                          <hr />
+
                           <p>
                             {t("wind direction")}:{" "}
                             <span>
                               {modalData.data[0]?.wind?.deg} {t("degrees")}
                             </span>
                           </p>
+                          <hr />
+
                           {modalData?.data[0]?.rain ? (
-                            <p>
-                              {t("Amount of rain during the last 3 hours")}:{" "}
-                              <span>{modalData?.data[0].rain["3h"]} mm</span>
-                            </p>
+                            <>
+                              <p>
+                                {t("Amount of rain during the last 3 hours")}:{" "}
+                                <span>{modalData?.data[0].rain["3h"]} mm</span>
+                              </p>
+                              <hr />
+                            </>
                           ) : null}
                         </div>
                       </div>
