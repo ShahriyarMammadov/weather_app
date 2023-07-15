@@ -83,7 +83,7 @@ export default function Home() {
             latitude: 40.4143569,
             longitude: 50.1176359,
           });
-          alert(error);
+          console.log(error);
         }
       );
     } else {
