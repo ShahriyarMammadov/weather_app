@@ -164,6 +164,18 @@ export default function Home() {
     }
   };
 
+  let language;
+
+  if (typeof localStorage !== "undefined") {
+    language =
+      localStorage.getItem("lang") !== null
+        ? localStorage.getItem("lang")
+        : localStorage.getItem("defaultLang");
+  } else {
+    language = i18n.language;
+  }
+  console.log(language);
+
   return (
     <>
       <Head>
@@ -189,7 +201,7 @@ export default function Home() {
                       onSearch={onSearch}
                     />
                     <Select
-                      defaultValue={i18n.language}
+                      defaultValue={language}
                       style={{
                         width: 80,
                       }}
