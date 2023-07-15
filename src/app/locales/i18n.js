@@ -32,9 +32,7 @@ typeof window !== "undefined"
 
 localStorage.getItem("lang")
   ? (userLang = localStorage.getItem("lang"))
-  : userLanguage
-  ? (userLang = userLanguage?.slice(0, 2))
-  : null;
+  : (userLang = userLanguage?.slice(0, 2));
 
 // userLanguage ? (userLang = userLanguage?.slice(0, 2)) : null;
 
