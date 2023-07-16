@@ -174,7 +174,6 @@ export default function Home() {
   } else {
     language = i18n.language;
   }
-  console.log(language);
 
   return (
     <>
