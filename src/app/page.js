@@ -5,7 +5,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
-import { Input, Space } from "antd";
+import { Input } from "antd";
 import snow from "./assets/images/snow.png";
 import cloudy from "./assets/images/cloudy.png";
 import rainy from "./assets/images/rainy.png";
@@ -21,6 +21,19 @@ import i18n from "./locales/i18n";
 import Bar from "./components/bar";
 import { Modal, Select } from "antd";
 import locale from "antd/es/date-picker/locale/en_US";
+// icons
+import sunriseIcon from "./assets/icons/sunrise.svg";
+import feelsLikeIcon from "./assets/icons/feelsLike.svg";
+import humidityIcon from "./assets/icons/humidity.svg";
+import pressureİcon from "./assets/icons/pressure.svg";
+import seaLevelİcon from "./assets/icons/sea-level.svg";
+import gorundLevelİcon from "./assets/icons/groundLevel.svg";
+import sunsetİcon from "./assets/icons/sunset.svg";
+import maxTempİcon from "./assets/icons/maksTemp.svg";
+import minTempİcon from "./assets/icons/minTemp.svg";
+import tempChangeİcon from "./assets/icons/tempChange.svg";
+import windIcon from "./assets/icons/windy.svg";
+import windDegree from "./assets/icons/windDegree.svg";
 
 export default function Home() {
   // {
@@ -375,11 +388,27 @@ export default function Home() {
                         <div className={styles.airConditionsData}>
                           <div>
                             <p>
-                              {t("sunrise")}:{" "}
+                              <div>
+                                <Image
+                                  src={sunriseIcon}
+                                  width={30}
+                                  height={30}
+                                  alt="sunrise"
+                                />
+                                {t("sunrise")}:{" "}
+                              </div>
                               <span> {sunrise.toLocaleTimeString()}</span>
                             </p>
                             <p>
-                              {t("feels like")}:{" "}
+                              <div>
+                                <Image
+                                  src={feelsLikeIcon}
+                                  width={30}
+                                  height={30}
+                                  alt="sunrise"
+                                />
+                                {t("feels like")}:{" "}
+                              </div>
                               <span>
                                 {" "}
                                 {(
@@ -391,37 +420,86 @@ export default function Home() {
                             </p>
 
                             <p>
-                              {t("humidity")}:{" "}
+                              <div>
+                                <Image
+                                  src={humidityIcon}
+                                  width={30}
+                                  height={30}
+                                  alt="sunrise"
+                                />
+                                {t("humidity")}:{" "}
+                              </div>
                               <span>
                                 {weatherData?.list[0]?.main?.humidity} %
                               </span>
                             </p>
                             <p>
-                              {t("pressure")}:{" "}
+                              <div>
+                                <Image
+                                  src={pressureİcon}
+                                  width={30}
+                                  height={30}
+                                  alt="sunrise"
+                                />
+                                {t("pressure")}:{" "}
+                              </div>
                               <span>
                                 {weatherData?.list[0]?.main?.pressure} mbar
                               </span>
                             </p>
                             <p>
-                              {t("sea level")}:{" "}
+                              <div>
+                                <Image
+                                  src={seaLevelİcon}
+                                  width={30}
+                                  height={30}
+                                  alt="sunrise"
+                                />
+                                {t("sea level")}:{" "}
+                              </div>
                               <span>
                                 {weatherData?.list[0]?.main?.sea_level} m
                               </span>
                             </p>
                             <p>
-                              {t("ground level")}:{" "}
+                              <div>
+                                <Image
+                                  src={gorundLevelİcon}
+                                  width={30}
+                                  height={30}
+                                  alt="sunrise"
+                                />
+                                {t("ground level")}:{" "}
+                              </div>
                               <span>
                                 {weatherData?.list[0]?.main?.grnd_level} m
                               </span>
                             </p>
                           </div>
+                          <hr />
                           <div>
                             <p>
-                              {t("sunset")}:{" "}
+                              <div>
+                                <Image
+                                  src={sunsetİcon}
+                                  width={30}
+                                  height={30}
+                                  alt="sunrise"
+                                />
+                                {t("sunset")}:{" "}
+                              </div>
                               <span> {sunset.toLocaleTimeString()}</span>
                             </p>
                             <p>
-                              {t("max temp")}.:{" "}
+                              <div>
+                                <Image
+                                  src={maxTempİcon}
+                                  width={30}
+                                  height={30}
+                                  alt="sunrise"
+                                />
+                                {t("max temp")}.:{" "}
+                              </div>
                               <span>
                                 {" "}
                                 {(
@@ -431,7 +509,15 @@ export default function Home() {
                               </span>
                             </p>
                             <p>
-                              {t("min temp")}.:{" "}
+                              <div>
+                                <Image
+                                  src={minTempİcon}
+                                  width={30}
+                                  height={30}
+                                  alt="minTemp"
+                                />
+                                {t("min temp")}.:{" "}
+                              </div>
                               <span>
                                 {(
                                   weatherData?.list[0]?.main?.temp_min - 273.15
@@ -440,22 +526,47 @@ export default function Home() {
                               </span>
                             </p>
                             <p>
-                              {t("temp. change")}:{" "}
+                              <div>
+                                <Image
+                                  src={tempChangeİcon}
+                                  width={30}
+                                  height={30}
+                                  alt="tempChange"
+                                />
+                                {t("temp. change")}:{" "}
+                              </div>
                               <span>
                                 {weatherData?.list[0]?.main?.temp_kf}
                                 <sup>°K</sup>
                               </span>
                             </p>
                             <p>
-                              {t("wind speed")}:{" "}
+                              <div>
+                                <Image
+                                  src={windIcon}
+                                  width={30}
+                                  height={30}
+                                  alt="wind"
+                                />
+                                {t("wind speed")}:{" "}
+                              </div>
                               <span>
                                 {weatherData?.list[0]?.wind?.speed} m/s
                               </span>
                             </p>
                             <p>
-                              {t("wind direction")}:{" "}
+                              <div>
+                                <Image
+                                  src={windDegree}
+                                  width={30}
+                                  height={30}
+                                  alt="wind"
+                                />
+                                {t("wind direction")}:{" "}
+                              </div>
                               <span>
-                                {weatherData?.list[0]?.wind?.deg} {t("degrees")}
+                                {weatherData?.list[0]?.wind?.deg}
+                                <sup>°</sup>
                               </span>
                             </p>
                           </div>

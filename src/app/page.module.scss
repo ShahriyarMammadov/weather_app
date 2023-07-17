@@ -138,13 +138,24 @@
         .airConditionsData {
             display: flex;
             gap: 150px;
-            padding: 20px;
+            padding: 10px;
+            // justify-content: space-between;
+            // justify-content: center;
+
 
             p {
                 font-size: 20px;
                 margin-top: 10px;
                 font-weight: 600;
                 color: #838b95;
+                display: flex;
+                align-items: center;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    gap: 2px;
+                }
 
                 span {
                     color: aliceblue;
@@ -152,23 +163,20 @@
             }
         }
 
-        @media only screen and (max-width: 650px) {
+        @media only screen and (max-width: 600px) {
             .airConditionsData {
-                gap: 15px;
-                // align-items: center;
                 padding: 0;
 
                 p {
-                    display: flex;
                     flex-direction: column;
-                    gap: 5px;
+                    align-items: flex-start;
                 }
             }
         }
 
         @media only screen and (max-width: 800px) {
             .airConditionsData {
-                gap: 15px;
+                gap: 7px;
             }
         }
     }
